@@ -16,10 +16,28 @@ int main() {
   c.blue = 0;
 
   clear_screen(s);
-
-  draw_line(0, 0, 400, 300, s, c);
+  int i;
+  for (i = 0; i < 500; i += 5) {
+    c.red = (int) (i / 500.0 * 255);
+    draw_line(0, 0, i, 500, s, c);
+  }
+  c.red = 0;
+  for (i = 0; i < 500; i += 5) {
+    c.blue = (int) (i / 500.0 * 255);
+    draw_line(0, 0, 500, i, s, c);
+  }
+  c.blue = 0;
+  c.red = MAX_COLOR;
+  for (i = 0; i < 500; i += 5) {
+    c.green = (int) (i / 500.0 * 255);
+    draw_line(499, 0, i, 500, s, c);
+  }
+  c.green = 0;
+  for (i = 0; i < 500; i += 5) {
+    c.blue = (int) (i / 500.0 * 255);
+    draw_line(499, 0, 500, i, s, c);
+  }
   display(s);
-  //draw_line(0, 0, 400, 300, s, c);
   save_extension(s, "lines.png");
   
 }
