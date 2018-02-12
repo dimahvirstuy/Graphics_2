@@ -16,7 +16,8 @@ int main() {
   c.blue = 0;
 
   clear_screen(s);
-  int i;
+  /* GALLERY IMAGE
+    int i;
   for (i = 0; i < 500; i += 5) {
     c.red = (int) (i / 500.0 * 255);
     draw_line(0, 0, i, 500, s, c);
@@ -37,6 +38,16 @@ int main() {
     c.blue = (int) (i / 500.0 * 255);
     draw_line(499, 0, 500, i, s, c);
   }
+  */
+  draw_line(0, 0, 500, 200, s, c);
+  draw_line(0, 0, 500, 400, s, c);
+  draw_line(0, 400, 500, 200, s, c);
+  draw_line(0, 400, 500, 400, s, c);
+  draw_line(400, 0, 0, 200, s, c);
+  draw_line(400, 0, 0, 400, s, c);
+  draw_line(400, 499, 0, 200, s, c);
+  draw_line(400, 499, 0, 400, s, c);
+  
   display(s);
   save_extension(s, "lines.png");
   

@@ -7,19 +7,15 @@
 
 //Insert your line algorithm here
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
+  if (y0>y1) {
+    int temp=y0;
+    y0=y1;
+    y1=temp;
+    temp=x0;
+    x0=x1;
+    x1=temp;
+  }
   if (x1 > x0 && y1 > y0 && x1 - x0 >= y1 - y0) {
-    if (x0>x1) {
-      int temp=x0;
-      x0=x1;
-      x1=temp;
-      temp=y0;
-      y0=y1;
-      y1=temp;
-    }else if (x0==x1 && y0>y1) {
-      int temp=y0;
-      y0=y1;
-      y1=temp;
-    }
     //1st octant
     int a = y1 - y0; //delta y
     int b = x0 - x1; //delta x
